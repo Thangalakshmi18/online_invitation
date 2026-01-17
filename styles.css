@@ -36,15 +36,15 @@ body {
 }
 
 .segment1 {
-  background-image: url('assets/temple-gopuram.png');
+  background-image: url('assets/img1.jpg');
 }
 
 .segment2 {
-  background-image: url('assets/jasmine.png');
+  background-image: url('assets/img2.jpg');
 }
 
 .segment3 {
-  background-image: url('assets/bg2.jpg');
+  background-image: url('assets/img3.jpg');
 }
 
 .segment-content {
