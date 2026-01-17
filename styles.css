@@ -32,7 +32,54 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  aspect-ratio: 9 / 16; /* 9:16 ratio for mobile portrait fit */
+}
+
+.segment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay to reduce brightness */
+  pointer-events: none;
+}
+
+.segment::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(11,22,48,0.3) 50%, var(--indigo) 100%);
+  pointer-events: none;
+}
+
+/* Device-specific adjustments */
+.mobile .segment {
+  aspect-ratio: 9 / 16; /* Portrait for mobile */
+}
+
+.tablet .segment {
+  aspect-ratio: 4 / 3; /* Balanced for tablet */
+}
+
+.desktop .segment {
+  aspect-ratio: 16 / 9; /* Landscape for desktop */
+  height: 100vh; /* Ensure full height */
+}
+
+.mobile .stylized-title {
+  font-size: clamp(2rem, 8vw, 4rem); /* Smaller on mobile */
+}
+
+.tablet .stylized-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.desktop .stylized-title {
+  font-size: clamp(4rem, 8vw, 7rem); /* Larger on desktop */
 }
 
 .segment1 {
@@ -48,9 +95,21 @@ body {
 }
 
 .segment-content {
-  text-align: center;
+  text-align: left;
   z-index: 1;
   position: relative;
+  max-width: 50%;
+  margin-left: 10%;
+}
+
+/* Mobile: center align */
+@media (max-width: 768px) {
+  .segment-content {
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .stylized-title {
@@ -60,11 +119,13 @@ body {
     0 0 10px rgba(212,175,55,0.5),
     0 0 20px rgba(212,175,55,0.3),
     0 0 30px rgba(212,175,55,0.2),
-    2px 2px 4px rgba(0,0,0,0.5);
+    2px 2px 4px rgba(0,0,0,0.5),
+    1px 1px 0px #4169E1; /* Royal blue accent */
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transform: rotate(-2deg);
+  
+  font-style: italic;
   margin: 0;
 }
 
@@ -73,7 +134,8 @@ body {
   color: var(--gold-soft);
   text-shadow: 
     0 0 8px rgba(230,199,107,0.5),
-    1px 1px 3px rgba(0,0,0,0.5);
+    1px 1px 3px rgba(0,0,0,0.5),
+    1px 1px 0px #4169E1;
   margin: 10px 0;
   font-style: italic;
 }
@@ -81,8 +143,9 @@ body {
 .invite-message {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: var(--white);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7), 1px 1px 0px #4169E1;
   margin: 20px 0;
+  font-style: italic;
 }
 
 .quote {
@@ -91,7 +154,8 @@ body {
   text-shadow: 
     0 0 10px rgba(212,175,55,0.5),
     0 0 20px rgba(212,175,55,0.3),
-    2px 2px 4px rgba(0,0,0,0.5);
+    2px 2px 4px rgba(0,0,0,0.5),
+    1px 1px 0px #4169E1;
   font-style: italic;
   line-height: 1.4;
   margin: 0 0 20px;
@@ -101,8 +165,9 @@ body {
 .welcome-message {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: var(--white);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7), 1px 1px 0px #4169E1;
   margin: 20px 0;
+  font-style: italic;
 }
 
 .location-message {
@@ -111,8 +176,10 @@ body {
   text-shadow: 
     0 0 10px rgba(212,175,55,0.5),
     0 0 20px rgba(212,175,55,0.3),
-    2px 2px 4px rgba(0,0,0,0.5);
+    2px 2px 4px rgba(0,0,0,0.5),
+    1px 1px 0px #4169E1;
   margin: 0 0 20px;
+  font-style: italic;
 }
 
 .map-link {
