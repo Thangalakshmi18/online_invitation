@@ -1,0 +1,140 @@
+:root {
+  --indigo: #0b1630;
+  --indigo-2: #0f1e45;
+  --gold: #d4af37;
+  --gold-soft: #e6c76b;
+  --white: #f7f7f7;
+  --muted: #c9c9c9;
+  --danger: #ff6b6b;
+  --success: #7bd389;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--indigo);
+  color: var(--white);
+  font-family: "Cormorant Garamond", "Noto Serif Tamil", serif;
+}
+
+.segment {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 9 / 16; /* 9:16 ratio for mobile portrait fit */
+}
+
+.segment1 {
+  background-image: url('assets/temple-gopuram.png');
+}
+
+.segment2 {
+  background-image: url('assets/jasmine.png');
+}
+
+.segment3 {
+  background-image: url('assets/bg2.jpg');
+}
+
+.segment-content {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.stylized-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--gold);
+  text-shadow: 
+    0 0 10px rgba(212,175,55,0.5),
+    0 0 20px rgba(212,175,55,0.3),
+    0 0 30px rgba(212,175,55,0.2),
+    2px 2px 4px rgba(0,0,0,0.5);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  margin: 0;
+}
+
+.stylized-subtitle {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: var(--gold-soft);
+  text-shadow: 
+    0 0 8px rgba(230,199,107,0.5),
+    1px 1px 3px rgba(0,0,0,0.5);
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.invite-message {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  margin: 20px 0;
+}
+
+.quote {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--gold);
+  text-shadow: 
+    0 0 10px rgba(212,175,55,0.5),
+    0 0 20px rgba(212,175,55,0.3),
+    2px 2px 4px rgba(0,0,0,0.5);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 0 20px;
+  max-width: 800px;
+}
+
+.welcome-message {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  margin: 20px 0;
+}
+
+.location-message {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--gold);
+  text-shadow: 
+    0 0 10px rgba(212,175,55,0.5),
+    0 0 20px rgba(212,175,55,0.3),
+    2px 2px 4px rgba(0,0,0,0.5);
+  margin: 0 0 20px;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  padding: 10px 20px;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.map-link:hover {
+  background: var(--gold);
+  color: var(--indigo);
+  text-shadow: none;
+}
+
+.map-symbol {
+  font-size: 1.5em;
+}
