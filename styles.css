@@ -16,11 +16,16 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background: var(--indigo);
   color: var(--white);
   font-family: "Cormorant Garamond", "Noto Serif Tamil", serif;
+  width: 375px;
+  height: 667px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  aspect-ratio: 9 / 16;
 }
 
 .segment {
